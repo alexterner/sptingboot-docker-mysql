@@ -1,0 +1,58 @@
+
+# Linux
+# backup files
+*~
+
+# Windows
+# thumbnails
+Thumbs.db
+
+# Mac OS X
+# metadata
+.DS_Store
+# thumbnails
+._*
+
+# GIT
+.git/
+
+# Java
+*.class
+# packages
+*.jar
+*.war
+*.ear
+
+# Eclipse
+.settings/
+.buildpath
+.classpath
+.project
+
+# Logging
+*.log
+
+# jME (binaries)
+*.so
+
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
+.idea
+.idea/*
+out
+test-output
+.idea/workspace.xml
+/target
+
+ # Maven
+  log/
+  target/
+
+.idea
+target
+
+
+# Angular 4
+node_modules
