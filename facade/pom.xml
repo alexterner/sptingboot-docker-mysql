@@ -22,11 +22,11 @@
     </properties>
 
     <dependencies>
-        <!--<dependency>
-            <groupId>com.aspectiva.management</groupId>
-            <artifactId>management-service</artifactId>
+        <dependency>
+            <groupId>com.company.springboot.docker.mysql</groupId>
+            <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

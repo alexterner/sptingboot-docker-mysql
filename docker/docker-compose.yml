@@ -12,8 +12,4 @@ services:
        MYSQL_USER: mysql_user
        MYSQL_PASSWORD: mysql_password
     
-   adminer:
-     image: adminer
-     ports:
-       - "8080:8080"
-     restart: always
+
