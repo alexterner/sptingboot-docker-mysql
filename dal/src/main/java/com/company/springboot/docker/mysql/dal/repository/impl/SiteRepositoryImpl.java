@@ -1,6 +1,7 @@
 package com.company.springboot.docker.mysql.dal.repository.impl;
 
 
+import com.company.springboot.docker.mysql.dal.entity.QSite;
 import com.company.springboot.docker.mysql.dal.entity.Site;
 
 import com.company.springboot.docker.mysql.dal.repository.custom.SiteRepositoryCustom;
@@ -26,9 +27,9 @@ public class SiteRepositoryImpl implements SiteRepositoryCustom {
         return null;
     }
 
-    /*private static final QSite Q_SITE = QSite.sitesDbRecord;
+    private static final QSite Q_SITE = QSite.site;
 
-    @PersistenceContext
+   /* @PersistenceContext
     private EntityManager entityManager;
 
 
