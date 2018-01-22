@@ -16,10 +16,15 @@ public class Site implements Serializable
 
 	private Boolean isActive;
 
-	public Site()
-	{
-
+	public Site(){
+		// NOTE: Need for Serialization / Deserialization
 	}
+
+	public Site(boolean isActive, String name){
+		this.isActive = isActive;
+		this.name = name;
+	}
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

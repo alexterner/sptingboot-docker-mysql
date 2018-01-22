@@ -8,10 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 
@@ -40,5 +37,20 @@ public class SiteController {
         }
 
         return new ResponseEntity<>( sites , HttpStatus.OK);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/isActive/{isActive}/name/{name}", method = RequestMethod.POST)
+    public ResponseEntity<Site> addSite(@PathVariable(value = "isActive") boolean isActive,  @PathVariable("name") String name) {
+
+        try {
+
+            return new ResponseEntity<>(  siteService.addSite(isActive, name), HttpStatus.OK);
+
+        } catch (Exception e) {
+            log.error("Failed to add site with name" + name, e);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }

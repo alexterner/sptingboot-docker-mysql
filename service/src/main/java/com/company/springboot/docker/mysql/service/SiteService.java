@@ -20,4 +20,9 @@ public class SiteService {
         return siteRepository.findAll();
     }
 
+
+    public Site addSite(boolean isActive, String name){
+        return siteRepository.save(new Site( isActive, name));
+    }
+
 }
