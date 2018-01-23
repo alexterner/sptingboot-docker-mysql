@@ -15,21 +15,9 @@ import java.util.List;
 
 public class SiteRepositoryImpl implements SiteRepositoryCustom {
 
-   // private static final QSite Q_SITE = QSite.sitesDbRecord;
-
-    @Override
-    public List<Site> getActiveSites() {
-        return null;
-    }
-
-    @Override
-    public Iterable<Site> getBySearch(String searchTerm) {
-        return null;
-    }
-
     private static final QSite Q_SITE = QSite.site;
 
-   /* @PersistenceContext
+    @PersistenceContext
     private EntityManager entityManager;
 
 
@@ -51,6 +39,6 @@ public class SiteRepositoryImpl implements SiteRepositoryCustom {
                 .from(Q_SITE)
                 .where(isActiveSites(), Q_SITE.name.toUpperCase().contains(searchTerm.toUpperCase()))
                 .list(Q_SITE);
-    }*/
+    }
 
 }

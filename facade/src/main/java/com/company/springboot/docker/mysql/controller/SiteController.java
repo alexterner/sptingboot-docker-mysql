@@ -27,7 +27,7 @@ public class SiteController {
 
 
     @RequestMapping( method = RequestMethod.GET)
-    public ResponseEntity<Iterable<Site>> getActiveSites() {
+    public ResponseEntity<Iterable<Site>> getAllSites() {
 
         Iterable<Site> sites = null;
         try {
@@ -53,5 +53,62 @@ public class SiteController {
             log.error("Failed to add site with name" + name, e);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+
+    @RequestMapping(value = "/search/{searchTerm}", method = RequestMethod.GET)
+    public ResponseEntity<Iterable<Site>> findBySearchTerm(@PathVariable("searchTerm") String searchTerm) {
+
+        Iterable<Site> sites = null;
+        try {
+            sites = siteService.getBySearchTerm(searchTerm);
+        } catch (Exception e) {
+            log.error("Failed search sites by searchTerm " + searchTerm, e);
+            return new ResponseEntity<>(Collections.emptyList(), HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>( sites , HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/active", method = RequestMethod.GET)
+    public ResponseEntity<Iterable<Site>> getActiveSites() {
+
+        Iterable<Site> sites = null;
+        try {
+            sites = siteService.getActiveSites();
+        } catch (Exception e) {
+            log.error("Failed get active sites", e);
+            return new ResponseEntity<>(Collections.emptyList(), HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>( sites , HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/active/page/{page}", method = RequestMethod.GET)
+    public ResponseEntity<Iterable<Site>> getPagedActiveSites(@PathVariable("page") int page) {
+
+        Iterable<Site> sites = null;
+        try {
+            sites = siteService.getActiveSites(page, DEFAULT_PAGE_SIZE);
+        } catch (Exception e) {
+            log.error("Failed get active sites", e);
+            return new ResponseEntity<>(Collections.emptyList(), HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>( sites , HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/page/{page}", method = RequestMethod.GET)
+    public ResponseEntity<Iterable<Site>> getPagedSites(@PathVariable("page") int page) {
+
+        Iterable<Site> sites = null;
+        try {
+            sites = siteService.getSites(page, DEFAULT_PAGE_SIZE);
+        } catch (Exception e) {
+            log.error("Failed get sites for page " + page, e);
+            return new ResponseEntity<>(Collections.emptyList(), HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>( sites , HttpStatus.OK);
     }
 }
