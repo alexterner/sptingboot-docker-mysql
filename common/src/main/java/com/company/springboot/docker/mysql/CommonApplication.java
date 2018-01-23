@@ -4,7 +4,7 @@ package com.company.springboot.docker.mysql;
  * Hello world!
  *
  */
-public class App 
+public class CommonApplication
 {
     public static void main( String[] args )
     {

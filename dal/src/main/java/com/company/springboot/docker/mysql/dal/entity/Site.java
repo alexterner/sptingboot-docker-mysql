@@ -60,5 +60,12 @@ public class Site implements Serializable
 		this.isActive = isActive;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Site{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", isActive=" + isActive +
+				'}';
+	}
 }

@@ -14,4 +14,6 @@ import java.util.List;
 public interface SiteRepository extends PagingAndSortingRepository<Site, Integer> , SiteRepositoryCustom{
 
     List<Site> findByIsActive(boolean isActive, Pageable pageable);
+
+    Site findById(Long id);
 }

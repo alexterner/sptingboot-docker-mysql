@@ -27,11 +27,11 @@
 
     <dependencies>
 
-       <!-- <dependency>
-            <groupId>com.aspectiva.management</groupId>
-            <artifactId>management-common</artifactId>
+        <dependency>
+            <groupId>com.company.springboot.docker.mysql</groupId>
+            <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>com.company.springboot.docker.mysql</groupId>

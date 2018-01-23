@@ -111,4 +111,21 @@ public class SiteController {
 
         return new ResponseEntity<>( sites , HttpStatus.OK);
     }
+
+
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public ResponseEntity<Site> updateSite(@RequestBody Site site) {
+
+        Site updatedSite = null;
+        try {
+            if (site != null) {
+                updatedSite = siteService.updateSite(site);
+            } else {
+                new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        }catch (Exception e){
+            log.error("Failed to update site  " + site, e);
+        }
+        return new ResponseEntity<Site>(updatedSite, HttpStatus.OK);
+    }
 }
