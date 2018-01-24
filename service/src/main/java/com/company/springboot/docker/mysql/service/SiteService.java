@@ -1,14 +1,11 @@
 package com.company.springboot.docker.mysql.service;
 
-
-import com.company.springboot.docker.mysql.common.utils.JsonUtils;
 import com.company.springboot.docker.mysql.dal.entity.Site;
 import com.company.springboot.docker.mysql.dal.repository.SiteRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
